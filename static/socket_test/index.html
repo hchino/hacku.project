@@ -1,0 +1,17 @@
+<!-- index.html -->
+ <html>
+     <head>
+         <script type="text/javascript">
+             var ws = new WebSocket("ws://192.168.2.112:8080/pipe");/*192.168.0.15は人によって変わる*/
+ 
+             ws.onmessage = function(e) {
+               document.getElementById("text-field").innerHTML = document.getElementById("text-field").innerHTML +"<br>"+ e.data;
+             }
+         </script>
+     </head>
+     <body>
+         <h1>WebSocket Example</h1>
+         <p id="text-field"></p>
+     </body>
+ </html>
+ 
